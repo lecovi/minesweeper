@@ -9,6 +9,7 @@
     :license: AGPL, see LICENSE for more details.
 """
 # Standard lib imports
+from random import choice
 # Third-party imports
 # LeCoVi imports
 
@@ -36,8 +37,16 @@ class Board:
 
     def _new_board(self):
         for x in range(self.height):
-            self.tiles[x] = list()
+            self.tiles.append(list())
             for y in range(self.width):
                 new_tile = Tile(x=x, y=y)
                 self.tiles[x].append(new_tile)
 
+    def set_mines(self):
+        mines_left = self.mines
+        while mines_left > 0:
+            random_row = choice(range(self.width))
+            random_col = choice(range(self.height))
+            if not self.tiles[random_row][random_col].has_mine:
+                self.tiles[random_row][random_col].has_mine = True
+            mines_left -= 1

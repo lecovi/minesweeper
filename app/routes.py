@@ -25,4 +25,6 @@ def index():
 @mines.route('/new')
 def new_game():
     board = Board()
+    board.set_mines()
+    pass
     return render_template('new_game.html', board=board)
