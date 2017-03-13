@@ -1,4 +1,21 @@
 {% extends "base.html" %}
 {% block body %}
 <h2>Flask Minesweeper New Game</h2>
+    <table>
+    <tbody>
+    {%  for row in board.tiles %}
+        <tr>
+        {% for tile in row %}
+            <td>
+            {% if tile.has_mine %}
+                *
+            {% else %}
+                {{ tile.mines_around }}
+            {% endif %}
+            </td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
 {% endblock %}
