@@ -99,7 +99,7 @@ class Board:
                 self.tiles[random_row][random_col].has_mine = True
             mines_left -= 1
 
-    def calculate_mines(self):
+    def set_mines_around(self):
         for row in self.tiles:
             for tile in row:
                 for neighbour in tile.get_neighbours(board=self):

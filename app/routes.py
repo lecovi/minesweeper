@@ -26,5 +26,5 @@ def index():
 def new_game():
     board = Board()
     board.set_mines()
-    board.calculate_mines()
+    board.set_mines_around()
     return render_template('new_game.html', board=board)
