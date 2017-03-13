@@ -12,6 +12,7 @@
 # Third-party imports
 from flask import Blueprint, render_template
 # LeCoVi imports
+from .models import Tile, Board
 
 mines = Blueprint('mines', __name__)
 
@@ -23,4 +24,5 @@ def index():
 
 @mines.route('/new')
 def new_game():
-    return render_template('new_game.html')
+    board = Board()
+    return render_template('new_game.html', board=board)

@@ -32,3 +32,12 @@ class Board:
         self.height = height
         self.mines = mines
         self.tiles = list()
+        self._new_board()
+
+    def _new_board(self):
+        for x in range(self.height):
+            self.tiles[x] = list()
+            for y in range(self.width):
+                new_tile = Tile(x=x, y=y)
+                self.tiles[x].append(new_tile)
+
