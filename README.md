@@ -11,7 +11,8 @@ Flask Minesweeper version
 - Friday's night reading about several minesweeper implementations.
 - Saturday & Sunday I didn't work on it (family issues). 
 - Monday Morning, back on track, coding from 9.00 a.m. to 11.00 a.m.
-- Monday Nigth, trying to get more features on, coding from 9.00 p.m. to ...
+- Monday Nigth, trying to get more features on, coding from 9.00 p.m. to 10.15 p.m. Missing Frontend.
+- Tuesday...
 
 ### Deviget Code Challenge
 
