@@ -10,7 +10,6 @@
 """
 # Standard lib imports
 from random import choice
-import json
 # Third-party imports
 from flask_sqlalchemy import SQLAlchemy
 # LeCoVi imports
@@ -152,3 +151,8 @@ class Board(db.Model):
             tile.is_revealed = True
             if tile.mines_around == 0:
                 self.reveal_zone(tile)
+
+    def mark(self, x, y):
+        tile = self.get_tile(x, y)
+        if not tile.is_revealed:
+            tile.is_marked = not tile.is_marked

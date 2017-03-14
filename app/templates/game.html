@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Flask Minesweeper New Game</h2>
+    <h3>Board ID: {{ board.id }}</h3>
+    <table>
+    <tbody>
+    {%  for row in board.tiles %}
+        <tr>
+        {% for tile in row %}
+            {% if tile.is_marked %}
+            <td style="background-color: darkorchid">
+            {% elif tile.is_revealed %}
+            <td style="background-color: bisque">
+            {% else %}
+            <td style="background-color: aqua">
+            {% endif %}
+            {% if tile.has_mine %}
+                *
+            {% else %}
+                {% if tile.is_revealed and not tile.mines_around == 0 %}
+                    {{ tile.mines_around }}
+                {% else %}
+
+                {% endif %}
+            {% endif %}
+            </td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

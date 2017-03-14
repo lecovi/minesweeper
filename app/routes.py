@@ -28,9 +28,9 @@ def new_game():
     db.session.add(board)
     db.session.commit()
     board.create_tiles()
-    db.session.commit()
+    # db.session.commit()
     board.set_mines()
-    db.session.commit()
+    # db.session.commit()
     board.set_mines_around()
     db.session.commit()
     return render_template('new_game.html', board=board)
@@ -44,4 +44,12 @@ def reveal(board_id, x, y):
     except GameOverException:
         return render_template('game_over.html', board=board, x=x, y=y)
     db.session.commit()
-    return render_template('new_game.html', board=board)
+    return render_template('game.html', board=board)
+
+
+@mines.route('/mark/<int:board_id>/<int:x>/<int:y>')
+def mark(board_id, x, y):
+    board = Board.get_by(board_id)
+    board.mark(x, y)
+    db.session.commit()
+    return render_template('game.html', board=board)

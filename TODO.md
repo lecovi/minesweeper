@@ -1,6 +1,6 @@
-- [ ] When a cell with no adjacent mines is revealed, all adjacent squares will be revealed (and repeat)
-- [ ] Ability to 'flag' a cell with a question mark or red flag
-- [ ] Alert when game is over
+- [x] When a cell with no adjacent mines is revealed, all adjacent squares will be revealed (and repeat)
+- [x] Ability to 'flag' a cell with a question mark or red flag
+- [x] Alert when game is over
 - [ ] Persistence. Not to lose the game if browser is closed
 - [ ] Time tracking
 - [ ] Ability to start a new game and preserve/resume the old ones
