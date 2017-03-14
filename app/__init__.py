@@ -11,5 +11,5 @@
 # Standard lib imports
 # Third-party imports
 # LeCoVi imports
-from .main import app
+from .main import app, db
 
