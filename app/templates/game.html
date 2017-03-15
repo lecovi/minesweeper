@@ -5,14 +5,17 @@
     <table>
     <tbody>
     {%  for row in board.tiles %}
-        <tr>
+        <tr style="height: 10px">
         {% for tile in row %}
             {% if tile.is_marked %}
-            <td style="background-color: darkorchid">
+            <td style="background-color: darkorchid ; width: 20px" id="{{
+                    tile.x }}_{{ tile.y }}">
             {% elif tile.is_revealed %}
-            <td style="background-color: bisque">
+            <td style="background-color: bisque; width: 20px" id="{{ tile.x
+                    }}_{{ tile.y }}">
             {% else %}
-            <td style="background-color: aqua">
+            <td style="background-color: aqua; width: 20px" id="{{ tile.x
+                    }}_{{ tile.y }}">
             {% endif %}
             {% if tile.has_mine %}
                 *

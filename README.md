@@ -5,14 +5,16 @@ Flask Minesweeper version
 
 - A class for *Tiles* & a class for the *Board*.
 - Persist objects between request using SQLite, will let me acomplish to preserve game.
+- I really get bored with Frontend. 
 
 ## Time tracker
 
 - Friday's night reading about several minesweeper implementations.
 - Saturday & Sunday I didn't work on it (family issues). 
 - Monday Morning, back on track, coding from 9.00 a.m. to 11.00 a.m.
-- Monday Nigth, trying to get more features on, coding from 9.00 p.m. to 10.15 p.m. Missing Frontend.
-- Tuesday...
+- Monday Night, trying to get more features on, coding from 9.00 p.m. to 10.15 p.m. Missing Frontend.
+- Tuesday, work made me impossible to use some time for the code challenge.
+- Wednesday, reading boring Frontend stuff from 7:30 a.m. to 9:30 a.m.
 
 ### Deviget Code Challenge
 

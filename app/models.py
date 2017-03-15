@@ -42,7 +42,7 @@ class Board(db.Model):
     __tablename__ = 'boards'
 
     id = db.Column(db.Integer, primary_key=True, index=True)
-    width = db.Column(db.Integer, nullable=False, default=15)
+    width = db.Column(db.Integer, nullable=False, default=20)
     height = db.Column(db.Integer, nullable=False, default=15)
     mines = db.Column(db.Integer, nullable=False, default=30)
 
@@ -60,13 +60,14 @@ class Board(db.Model):
         return board
 
     def create_tiles(self):
-        for x in range(self.height):
-            self.tiles.append(list())
-            for y in range(self.width):
+        for y in range(self.height):
+            row = list()
+            for x in range(self.width):
                 new_tile = Tile(x=x, y=y, board_id=self.id)
                 db.session.add(new_tile)
                 db.session.commit()
-                self.tiles[x].append(new_tile)
+                row.append(new_tile)
+            self.tiles.append(row)
 
     def get_tile(self, x, y):
         return db.session.query(Tile).filter_by(board_id=self.id, x=x,
